@@ -1,0 +1,34 @@
+From f54655f7fb6aca4c4b709ba551a45dd05df6c261 Mon Sep 17 00:00:00 2001
+From: "Lee, Jude" <Jude.Lee@atmel.com>
+Date: Tue, 31 May 2016 14:34:19 +0900
+Subject: [PATCH] patch-dts-file-for-mmc-cd
+
+Signed-off-by: Lee, Jude <Jude.Lee@atmel.com>
+---
+ arch/arm/boot/dts/at91-sama5d4_xplained.dts | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm/boot/dts/at91-sama5d4_xplained.dts b/arch/arm/boot/dts/at91-sama5d4_xplained.dts
+index eec595a..3c12e2f 100644
+--- a/arch/arm/boot/dts/at91-sama5d4_xplained.dts
++++ b/arch/arm/boot/dts/at91-sama5d4_xplained.dts
+@@ -108,14 +108,14 @@
+ 
+ 			mmc1: mmc@fc000000 {
+ 				pinctrl-names = "default";
+-				pinctrl-0 = <&pinctrl_mmc1_clk_cmd_dat0 &pinctrl_mmc1_dat1_3 &pinctrl_mmc1_cd>;
++				pinctrl-0 = <&pinctrl_mmc1_clk_cmd_dat0 &pinctrl_mmc1_dat1_3>;
++				non-removable;
+ 				vmmc-supply = <&vcc_mmc1_reg>;
+ 				vqmmc-supply = <&vcc_3v3_reg>;
+ 				status = "okay";
+ 				slot@0 {
+ 					reg = <0>;
+ 					bus-width = <4>;
+-					cd-gpios = <&pioE 3 0>;
+ 				};
+ 			};
+ 
+-- 
+1.9.1
+
